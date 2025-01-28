@@ -1,0 +1,25 @@
+/** @format */
+
+@import '@app/theme/index.scss';
+
+.login {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    form {
+        width: 300px;
+        gap: 8px;
+        background-color: $primary;
+
+        input {
+            background-color: $light;
+            border: solid 2px transparent;
+        }
+
+        .button {
+            width: 100%;
+        }
+    }
+}

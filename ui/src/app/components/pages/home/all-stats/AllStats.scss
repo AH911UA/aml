@@ -1,0 +1,76 @@
+/** @format */
+
+@import '@app/theme/index.scss';
+
+.Stats_stats__AZjNh {
+    margin-bottom: 16rem;
+    padding: 8.5rem 0;
+    background-color: #007bfb;
+}
+
+@media (max-width: 1024px) {
+    .Stats_stats__AZjNh {
+        margin-bottom: 12rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .Stats_stats__AZjNh {
+        margin-bottom: 8rem;
+        padding: 70px 0;
+    }
+
+    .Stats_col__E2EN2 {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .Stats_col__E2EN2:not(:last-child) {
+        margin-bottom: 70px;
+    }
+}
+
+.Stats_item__O3xHA {
+    color: #fff;
+}
+
+.Stats_item__title__NpP2a {
+    font-weight: 700;
+    font-size: 5.2rem;
+    line-height: 120%;
+    font-weight: 900;
+    margin: 0 0 12px;
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    .Stats_item__title__NpP2a {
+        font-size: 3rem;
+        margin-bottom: 8px;
+        font-size: 5.2rem;
+    }
+}
+
+.Stats_item__description__2TmcZ {
+    max-width: 325px;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 140%;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .Stats_item__description__2TmcZ {
+        font-size: 1.4rem;
+    }
+}
+
+.Stats_item__description__2TmcZ:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 767px) {
+    .Stats_item__description__2TmcZ {
+        max-width: 275px;
+    }
+}

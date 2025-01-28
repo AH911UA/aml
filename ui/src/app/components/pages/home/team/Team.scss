@@ -1,0 +1,132 @@
+/** @format */
+
+@import '@app/theme/index.scss';
+
+.team {
+    margin-bottom: 16rem;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 12rem;
+    }
+
+    @media (max-width: 767px) {
+        margin-bottom: 8rem;
+    }
+
+    &_title {
+        font-weight: 700;
+        font-size: 5.2rem;
+        line-height: 120%;
+        margin: 0 0 3rem;
+        text-align: center;
+
+        @media (max-width: 767px) {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+    }
+
+    &_text {
+        margin-bottom: 5rem;
+        text-align: center;
+        font-weight: 400;
+        font-size: 2.4rem;
+
+        @media (max-width: 767px) {
+            margin-bottom: 40px;
+            font-size: 1.8rem;
+        }
+    }
+
+    .desktopView {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 36px;
+
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    .mobileView {
+        display: none;
+
+        @media (max-width: 767px) {
+            display: block;
+
+            .slick-slide {
+                & > div {
+                    height: 100%;
+                }
+            }
+
+            .member {
+                &_card {
+                    &, .column {
+                        height: 100%;
+                    }
+
+                    &:hover {
+                        transform: unset;
+                    }
+                }
+
+                &_info {
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .member {
+        &_card {
+            border-radius: 16px;
+            overflow: hidden;
+            background-color: $light;
+            transition: $longTransition;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        &_info {
+            display: grid;
+            grid-template-rows: 1fr 1fr max-content;
+            gap: 8px;
+            padding: 16px;
+
+            @media (max-width: 767px) {
+            }
+
+            &_position {
+                font-weight: 600;
+                font-size: 1.8rem;
+                line-height: 100%;
+                color: #a1a1a1;
+
+                @media (max-width: 767px) {
+                }
+            }
+
+            &_name {
+                margin: 0;
+                font-weight: 600;
+                font-size: 2.8rem;
+            }
+
+            &_social {
+                display: flex;
+                gap: 8px;
+            }
+        }
+    }
+
+    .icon {
+        transition: $shortTransition;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

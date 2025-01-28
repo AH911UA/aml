@@ -1,0 +1,205 @@
+/** @format */
+
+@import '@app/theme/index.scss';
+
+.WhatElse_whatelse__gyBuY {
+    margin-bottom: 16rem;
+}
+
+@media (max-width: 1024px) {
+    .WhatElse_whatelse__gyBuY {
+        margin-bottom: 12rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .WhatElse_whatelse__gyBuY {
+        margin-bottom: 8rem;
+    }
+}
+
+.WhatElse_title__VA0si {
+    font-weight: 700;
+    font-size: 5.2rem;
+    line-height: 120%;
+    margin: 0 0 5rem;
+}
+
+@media (max-width: 767px) {
+    .WhatElse_title__VA0si {
+        font-size: 3rem;
+        margin-bottom: 30px;
+    }
+}
+
+.WhatElse_item__oyesk {
+    display: flex;
+    justify-content: space-between;
+    padding: 6rem 7rem;
+    border-radius: 3rem;
+    background-color: #fff;
+    box-sizing: border-box;
+    color: #000;
+}
+
+@media (max-width: 767px) {
+    .WhatElse_item__oyesk {
+        position: relative;
+        display: block;
+        padding: 30px 24px 108px;
+        border-radius: 20px;
+    }
+}
+
+.WhatElse_item__oyesk:hover .WhatElse_item__image__9tjBb {
+    transform: scale(1.05);
+}
+
+.WhatElse_item__oyesk:not(:last-child) {
+    margin-bottom: 6rem;
+}
+
+@media (max-width: 767px) {
+    .WhatElse_item__oyesk:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+.WhatElse_item--1__N7Xgt {
+    background-color: #323d46;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .WhatElse_item--2__fgvT4 {
+        padding-bottom: 148px;
+    }
+}
+
+.WhatElse_item__body__uvF8y {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 60rem;
+    min-height: 100%;
+}
+
+@media (max-width: 767px) {
+    .WhatElse_item__body__uvF8y {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.WhatElse_item__title__TnaTb {
+    font-weight: 700;
+    font-size: 5.2rem;
+    line-height: 120%;
+    margin: 0 0 30px;
+}
+
+@media (max-width: 767px) {
+    .WhatElse_item__title__TnaTb {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+}
+
+.WhatElse_item__description__BqcJ3 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 150%;
+}
+
+@media (max-width: 767px) {
+    .WhatElse_item__description__BqcJ3 {
+        font-size: 1.8rem;
+    }
+}
+
+.WhatElse_item__description__BqcJ3:not(:last-child),
+.WhatElse_item__description__BqcJ3:not(:last-of-type) {
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 767px) {
+    .WhatElse_item__description__BqcJ3:not(:last-child),
+    .WhatElse_item__description__BqcJ3:not(:last-of-type) {
+        margin-bottom: 2.4rem;
+    }
+}
+
+.WhatElse_item__actions__0AdBn {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 7.5rem;
+}
+
+@media (max-width: 767px) {
+    .WhatElse_item__actions__0AdBn {
+        position: absolute;
+        right: 20px;
+        bottom: 24px;
+        left: 20px;
+        flex-direction: column-reverse;
+        padding-top: 0;
+    }
+}
+
+.WhatElse_item__image__9tjBb {
+    width: 100%;
+    max-width: 40rem;
+    transition: transform 0.6s ease;
+}
+
+.WhatElse_note__HjhVn {
+    min-width: 45.5rem;
+    margin-left: 4.4rem;
+}
+
+@media (max-width: 767px) {
+    .WhatElse_note__HjhVn {
+        min-width: 100%;
+        margin-bottom: 24px;
+        margin-left: 0;
+    }
+}
+
+.InfoGuard_box__RZoQl {
+    min-height: 4rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.2rem 1.2rem 1.2rem 6.3rem;
+    border-radius: 1.4rem;
+    background: url(../../../../../assets/shield.1678f055.svg) 1.5rem 1rem
+        no-repeat;
+    background-size: auto 3rem;
+    box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+    .InfoGuard_box__RZoQl {
+        padding: 10px 16px 10px 46px;
+        background-size: auto 20px;
+    }
+}
+
+.InfoGuard_inner__6nn8W {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 140%;
+    font-size: 1.5rem;
+    color: #637381;
+}
+
+@media (max-width: 767px) {
+    .InfoGuard_inner__6nn8W {
+        font-size: 1.4rem;
+    }
+}
+
+.InfoGuard_inner__6nn8W:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+}

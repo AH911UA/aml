@@ -1,0 +1,50 @@
+/** @format */
+
+@import '@app/theme/index.scss';
+
+.admin {
+    form {
+        padding: 32px 32px 16px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 0 8px $dark;
+
+        &,
+        input {
+            border-radius: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            background-color: #efefef;
+            border: solid 2px transparent;
+            outline: none;
+            box-sizing: border-box;
+
+            &.error {
+                border-color: $danger;
+            }
+        }
+
+        .button {
+            justify-content: center;
+        }
+    }
+
+    .telegramSettings,
+    .projectSettings {
+        form {
+            margin: 48px 0;
+            align-items: end;
+            gap: 16px;
+            background: $light;
+
+            .button {
+                width: 200px;
+                margin: 0 -3.5%;
+            }
+        }
+    }
+}

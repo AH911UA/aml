@@ -1,0 +1,139 @@
+/** @format */
+
+@import '@app/theme/index.scss';
+
+.Prime_prime__K8ylJ {
+    overflow: hidden;
+    margin-bottom: 16rem;
+    padding-top: 168px;
+}
+
+@media (max-width: 1024px) {
+    .Prime_prime__K8ylJ {
+        margin-bottom: 12rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .Prime_prime__K8ylJ {
+        margin-bottom: 8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .Prime_prime__K8ylJ {
+        padding-top: 96px;
+    }
+}
+
+.Prime_wrapper__nmUkY {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+    .Prime_wrapper__nmUkY {
+        position: relative;
+        display: block;
+        padding-bottom: 140px;
+    }
+}
+
+.Prime_text__fvhhu {
+    width: 100%;
+    max-width: 71rem;
+}
+
+@media (max-width: 767px) {
+    .Prime_text__fvhhu {
+        max-width: 100%;
+    }
+}
+
+.Prime_title__PLqGZ {
+    font-weight: 900;
+    font-size: 8rem;
+    line-height: 120%;
+    margin: 0 0 20px;
+}
+
+@media (max-width: 1024px) {
+    .Prime_title__PLqGZ {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .Prime_title__PLqGZ {
+        font-size: 3.6rem;
+        text-align: center;
+    }
+}
+
+.Prime_description__YcQnM {
+    max-width: 550px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 150%;
+}
+
+@media (max-width: 767px) {
+    .Prime_description__YcQnM {
+        font-size: 1.8rem;
+    }
+}
+
+.Prime_description__YcQnM:not(:last-child),
+.Prime_description__YcQnM:not(:last-of-type) {
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 767px) {
+    .Prime_description__YcQnM:not(:last-child),
+    .Prime_description__YcQnM:not(:last-of-type) {
+        margin-bottom: 2.4rem;
+    }
+
+    .Prime_description__YcQnM {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+.Prime_actions__cmJx0 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem 4rem;
+}
+
+@media (max-width: 767px) {
+    .Prime_actions__cmJx0 {
+        position: absolute;
+        right: 20px;
+        bottom: 0;
+        left: 20px;
+        flex-direction: column;
+    }
+}
+
+.Prime_image__VeMYH {
+    width: 62rem;
+    margin-right: -10%;
+}
+
+@media (max-width: 1024px) {
+    .Prime_image__VeMYH {
+        margin-right: -5%;
+    }
+}
+
+@media (max-width: 767px) {
+    .Prime_image__VeMYH {
+        width: auto;
+        margin-right: -10px;
+        margin-left: -15px;
+    }
+}

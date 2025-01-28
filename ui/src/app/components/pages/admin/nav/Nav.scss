@@ -1,0 +1,54 @@
+/** @format */
+
+@import '@app/theme/index.scss';
+
+.adminNav {
+    box-shadow: 0 0 8px $dark;
+
+    .wrapper,
+    &_logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .wrapper {
+        gap: 48px;
+    }
+
+    &_logo {
+        gap: 8px;
+    }
+
+    &_tabs {
+        display: flex;
+        gap: 16px;
+
+        a {
+            position: relative;
+            color: $dark;
+            font-size: 14px;
+            font-weight: 900;
+            text-decoration: none;
+            text-transform: uppercase;
+            word-spacing: 4px;
+
+            &:hover, &.active {
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &::after {
+                content: '';
+                width: 0;
+                height: 2px;
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                background-color: $primary;
+                transition: $longTransition;
+            }
+
+        }
+    }
+}
