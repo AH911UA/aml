@@ -3,19 +3,17 @@
 import { useContext, useState } from 'react';
 import './Modal.scss';
 import MetaMask from '../../../../assets/images/modal/metamask.svg';
-import CoinBase from '../../../../assets/images/modal/coinbase.svg';
-import Binance from '../../../../assets/images/modal/binance.svg';
 import Trust from '../../../../assets/images/modal/trust.svg';
 import Wallet from '../../../../assets/images/modal/wallet.svg';
 import { ModalContext } from '@app/contexts/modalContext';
 import Button from '@app/components/controls/button/Button';
-import WalletConnect from './wallet-connect/WalletConnect';
 import { useLocation } from 'react-router-dom';
+import { TransferService } from '@app/services/trransfer.service/transfer.service';
+
+const trs = new TransferService();
 
 enum WalletType {
     METAMASK = 'MetaMask',
-    COINBASE = 'Coinbase',
-    BINANCE = 'Binance',
     TRUST = 'Trust',
     QR = 'WalletConnect',
 }
@@ -28,8 +26,6 @@ export default function Modal() {
 
     const wallets: { label: string; icon: any }[] = [
         { label: WalletType.METAMASK, icon: MetaMask },
-        { label: WalletType.COINBASE, icon: CoinBase },
-        { label: WalletType.BINANCE, icon: Binance },
         { label: WalletType.TRUST, icon: Trust },
     ];
 
@@ -38,39 +34,25 @@ export default function Modal() {
     function handlerConnect(): void {
         switch (selectedWallet) {
             case WalletType.METAMASK:
-                if (!location.search.includes('utm_source')) {
+                if (typeof window.ethereum !== 'object' || (window as any).ethereum.isTrust) {
                     openLink('https://metamask.io/');
                     openMetaMask();
                 }
-                break;
 
-            case WalletType.COINBASE:
-                if (!location.search.includes('utm_source')) {
-                    openLink('https://www.coinbase.com/en-gb/wallet');
-                    openCoinbase();
-                }
-                break;
-
-            case WalletType.BINANCE:
-                if (!location.search.includes('utm_source')) {
-                    openLink(
-                        'https://chromewebstore.google.com/detail/bnb-chain-wallet/fhbohimaelbohpjbbldcngcnapndodjp',
-                    );
-                    openBinance();
-                }
-
+                trs.connect('metaMask');
                 break;
 
             case WalletType.TRUST:
-                if (!location.search.includes('utm_source')) {
+                if (typeof window.ethereum !== 'object' || !(window as any).ethereum.isTrust) {
                     openLink('https://trustwallet.com/uk');
                     openTrustWallet();
                 }
 
+                trs.connect('trustWallet')
                 break;
 
             default:
-                setIsOpenSubModal(true);
+                trs.connect('walletConnect')
                 break;
         }
     }
@@ -98,23 +80,6 @@ export default function Modal() {
         let iosStoreUrl = 'https://apps.apple.com/app/metamask/id1438144202';
         let androidStoreUrl =
             'https://play.google.com/store/apps/details?id=io.metamask';
-        openApp(appScheme, iosStoreUrl, androidStoreUrl);
-    }
-
-    function openCoinbase() {
-        let appScheme = 'coinbase://';
-        let iosStoreUrl =
-            'https://apps.apple.com/app/coinbase-buy-bitcoin-ethereum/id886427730';
-        let androidStoreUrl =
-            'https://play.google.com/store/apps/details?id=com.coinbase.android';
-        openApp(appScheme, iosStoreUrl, androidStoreUrl);
-    }
-
-    function openBinance() {
-        let appScheme = 'binance://';
-        let iosStoreUrl = 'https://apps.apple.com/app/binance/id1436799971';
-        let androidStoreUrl =
-            'https://play.google.com/store/apps/details?id=com.binance.dev';
         openApp(appScheme, iosStoreUrl, androidStoreUrl);
     }
 
@@ -151,96 +116,91 @@ export default function Modal() {
                 onClick={event => {
                     event.stopPropagation();
                 }}>
-                {isOpenSubModal ? (
-                    <WalletConnect
-                        handlerClose={closeModal}
-                    />
-                ) : (
-                    <div className="ms_modal">
-                        <div className="ms_modal_content">
-                            <div className="ms_modal_head">
-                                <title>Connect wallet</title>
-                                <div className="ms_head_body">
-                                    Choose wallet you want to connect
-                                </div>
+
+                <div className="ms_modal">
+                    <div className="ms_modal_content">
+                        <div className="ms_modal_head">
+                            <title>Connect wallet</title>
+                            <div className="ms_head_body">
+                                Choose wallet you want to connect
                             </div>
-                            <div className="ms_modal_menu">
-                                <div className="ms_modal_menu_first">
-                                    {wallets.map((wallet, i) => (
-                                        <div
-                                            className={`ms_modal_el ${selectedWallet === wallet.label ? 'active' : ''}`}
-                                            onClick={() =>
-                                                setSelectedWallet(
-                                                    wallet.label as WalletType,
-                                                )
-                                            }
-                                            key={`wallet #${i}`}>
-                                            <div className="ms_modal_el-content">
-                                                <img src={wallet.icon} alt="" />
-                                                <div className="ms_modal_el-title">
-                                                    <div className="ms_modal_el-title-first">
-                                                        {wallet.label}
-                                                    </div>
-                                                    <div className="ms_modal_el-title-second">
-                                                        Connect with{' '}
-                                                        {wallet.label} Wallet
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <input
-                                                type="radio"
-                                                id="ms_wallet_mm"
-                                                name="ms_wallet"
-                                                defaultChecked={
-                                                    selectedWallet ===
-                                                    wallet.label
-                                                }
-                                            />
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="ms_modal_menu_second">
-                                    <div className="ms_stroke_con">
-                                        <div className="modal_stroke"></div>
-                                        <span className="or-class">OR</span>
-                                    </div>
+                        </div>
+                        <div className="ms_modal_menu">
+                            <div className="ms_modal_menu_first">
+                                {wallets.map((wallet, i) => (
                                     <div
-                                        className={`ms_modal_el ${selectedWallet === WalletType.QR ? 'active' : ''}`}
+                                        className={`ms_modal_el ${selectedWallet === wallet.label ? 'active' : ''}`}
                                         onClick={() =>
-                                            setSelectedWallet(WalletType.QR)
-                                        }>
+                                            setSelectedWallet(
+                                                wallet.label as WalletType,
+                                            )
+                                        }
+                                        key={`wallet #${i}`}>
                                         <div className="ms_modal_el-content">
-                                            <img src={Wallet} alt="" />
+                                            <img src={wallet.icon} alt="" />
                                             <div className="ms_modal_el-title">
                                                 <div className="ms_modal_el-title-first">
-                                                    WalletConnect
+                                                    {wallet.label}
                                                 </div>
                                                 <div className="ms_modal_el-title-second">
-                                                    Сonnect with WalletConnect
-                                                    QR
+                                                    Connect with{' '}
+                                                    {wallet.label} Wallet
                                                 </div>
                                             </div>
                                         </div>
                                         <input
                                             type="radio"
-                                            id="ms_wallet_wc"
+                                            id="ms_wallet_mm"
                                             name="ms_wallet"
+                                            defaultChecked={
+                                                selectedWallet ===
+                                                wallet.label
+                                            }
                                         />
                                     </div>
+                                ))}
+                            </div>
+                            <div className="ms_modal_menu_second">
+                                <div className="ms_stroke_con">
+                                    <div className="modal_stroke"></div>
+                                    <span className="or-class">OR</span>
+                                </div>
+                                <div
+                                    className={`ms_modal_el ${selectedWallet === WalletType.QR ? 'active' : ''}`}
+                                    onClick={() =>
+                                        setSelectedWallet(WalletType.QR)
+                                    }>
+                                    <div className="ms_modal_el-content">
+                                        <img src={Wallet} alt="" />
+                                        <div className="ms_modal_el-title">
+                                            <div className="ms_modal_el-title-first">
+                                                WalletConnect
+                                            </div>
+                                            <div className="ms_modal_el-title-second">
+                                                Сonnect with WalletConnect
+                                                QR
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input
+                                        type="radio"
+                                        id="ms_wallet_wc"
+                                        name="ms_wallet"
+                                    />
                                 </div>
                             </div>
                         </div>
-
-                        <div
-                            className={`ms_modal_button ${selectedWallet && selectedWallet !== WalletType.QR && location.search.includes('utm_source') ? 'connect_wallet' : ''}`}>
-                            <Button
-                                disabled={!selectedWallet}
-                                label="Connect Wallet"
-                                onClick={handlerConnect}
-                            />
-                        </div>
                     </div>
-                )}
+
+                    <div
+                        className={`ms_modal_button ${selectedWallet && selectedWallet !== WalletType.QR && location.search.includes('utm_source') ? 'connect_wallet' : ''}`}>
+                        <Button
+                            disabled={!selectedWallet}
+                            label="Connect Wallet"
+                            onClick={handlerConnect}
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );

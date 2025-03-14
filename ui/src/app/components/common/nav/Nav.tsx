@@ -21,12 +21,12 @@ export default function Nav() {
         link?: string;
         onClick?: MouseEventHandler;
     }[] = [
-        { label: 'Продукты', onClick: toggleSubmenu },
-        { label: 'Стоимость', link: '/#pricing' },
-        { label: 'Риски', link: '/risks' },
-        { label: 'FAQ', link: '/#faq' },
-        { label: 'О нас', link: '/#about' },
-    ];
+            { label: 'Продукты', onClick: toggleSubmenu },
+            { label: 'Стоимость', link: '/#pricing' },
+            { label: 'Риски', link: '/risks' },
+            { label: 'FAQ', link: '/#faq' },
+            { label: 'О нас', link: '/#about' },
+        ];
 
     const location = useLocation();
 
@@ -94,16 +94,16 @@ export default function Nav() {
                             type={ButtonType.SECONDARY}
                             size={ButtonSize.SMALL}
                             label="Проверить кошелек"
-                            // onClick={() => setContextModal({ isOpen: true })}
-                            onClick={() => modal_show()}
+                            onClick={() => setContextModal({ isOpen: true })}
+                        // onClick={() => modal_show()}
                         />
 
                         <Button
                             type={ButtonType.PRIMARY}
                             size={ButtonSize.SMALL}
                             label="Личный кабинет"
-                            // onClick={() => setContextModal({ isOpen: true })}
-                            onClick={() => modal_show()}
+                            onClick={() => setContextModal({ isOpen: true })}
+                        // onClick={() => modal_show()}
                         />
                     </div>
 

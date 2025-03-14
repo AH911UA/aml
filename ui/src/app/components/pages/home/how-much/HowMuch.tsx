@@ -34,8 +34,8 @@ export default function HowMuch() {
                     <Button
                         type={ButtonType.ARROW_PRIMARY}
                         label="Проверить кошелек"
-                        onClick={() => modal_show()}
-                        // onClick={() => setContextModal({ isOpen: true })}
+                        // onClick={() => modal_show()}
+                        onClick={() => setContextModal({ isOpen: true })}
                     />
                 </div>
                 <div className="HowMatch_text__ZNwKt " data-aos="fade-up">

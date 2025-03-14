@@ -81,7 +81,7 @@ export default function About() {
                             className="Doing_item__tf22j Doing_item--3__0CcMn is-hovered "
                             data-aos="fade-up"
                             data-aos-delay="100"
-                            // href="#"
+                        // href="#"
                         >
                             <div className="Doing_item__text__g5N1G">
                                 <h3 className="Doing_item__title2__sH_fD">
@@ -100,10 +100,10 @@ export default function About() {
                                 <Button
                                     type={ButtonType.ARROW_PRIMARY}
                                     label="Проверить"
-                                    // onClick={() =>
-                                    //     setContextModal({ isOpen: true })
-                                    // }
-                                    onClick={() => modal_show()}
+                                    onClick={() =>
+                                        setContextModal({ isOpen: true })
+                                    }
+                                // onClick={() => modal_show()}
                                 />
                             </div>
                         </div>

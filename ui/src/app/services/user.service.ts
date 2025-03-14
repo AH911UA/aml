@@ -55,7 +55,7 @@ export default class UserService implements iUserService {
                 `source=${this.source}&method=${urls.CHECK}`,
                 formData,
             );
-            
+
             if (!response || response === LoginStatus.ERROR) {
                 throw '[401]: Not Authorized';
             }

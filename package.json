@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@types/web3": "^1.2.2"
+  },
+  "dependencies": {
+    "@metamask/providers": "^20.0.0"
+  }
+}

@@ -40,10 +40,10 @@ export default function WhatElse() {
                                 <Button
                                     type={ButtonType.ARROW_SECONDARY}
                                     label="Проверить адрес"
-                                    // onClick={() =>
-                                    //     setContextModal({ isOpen: true })
-                                    // }
-                                    onClick={() => modal_show()}
+                                    onClick={() =>
+                                        setContextModal({ isOpen: true })
+                                    }
+                                // onClick={() => modal_show()}
                                 />
                             </div>
                         </div>

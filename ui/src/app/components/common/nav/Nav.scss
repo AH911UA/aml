@@ -64,7 +64,7 @@
 }
 
 .Header_header__5SOa7 {
-    z-index: 1000;
+    z-index: 10;
     position: fixed;
     top: 0;
     right: 0;
@@ -87,9 +87,7 @@
     background-color: #007bfb;
 }
 
-.Header_header--white-blur__RmWim
-    .Header_actions__7WWGd
-    .Header_button__9nVop:hover {
+.Header_header--white-blur__RmWim .Header_actions__7WWGd .Header_button__9nVop:hover {
     background-color: #3056d3;
 }
 
@@ -244,7 +242,7 @@
 
 .MenuProducts_menu__DXLMu {
     opacity: 0;
-    z-index: 1000;
+    z-index: 10;
     position: fixed;
     top: 72px;
     right: 0;
@@ -443,8 +441,7 @@
     margin-bottom: 24px;
 }
 
-.MenuBurger_item__DZdgl.MenuBurger_is-active__qDmnT.MenuBurger_has-submenu__KlCgp
-    .MenuBurger_link___O9tw:before {
+.MenuBurger_item__DZdgl.MenuBurger_is-active__qDmnT.MenuBurger_has-submenu__KlCgp .MenuBurger_link___O9tw:before {
     top: 12px;
     transform: rotate(225deg);
 }

@@ -45,10 +45,13 @@ CREATE TABLE IF NOT EXISTS bot_messages (
 
 INSERT INTO users (login, password)
 VALUES ('admin', MD5(CONCAT('aml', MD5('admin'), '2024')))
-ON DUPLICATE KEY UPDATE password = VALUES(password);```
+ON DUPLICATE KEY UPDATE password = VALUES(password);
+
+```
 
 
-```bash
+```
+bash
 cd api
 php -S 127.0.0.1:8000
 ````

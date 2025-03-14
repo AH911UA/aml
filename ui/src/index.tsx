@@ -7,6 +7,7 @@ import ModalContextProvider from '@app/contexts/modalContext';
 import ReactDOM from 'react-dom/client';
 import LoaderContextProvider from '@app/contexts/loaderContext';
 
+
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement,
 );

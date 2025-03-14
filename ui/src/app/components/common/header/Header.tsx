@@ -24,15 +24,13 @@ export default function Header() {
                     <div className="Prime_actions__cmJx0">
                         <Button
                             label="Проверить кошелек"
-                            // onClick={() => setContextModal({ isOpen: true })}
-                            onClick={() => modal_show()}
+                            onClick={() => setContextModal({ isOpen: true })}
                         />
 
                         <Button
                             type={ButtonType.ARROW_PRIMARY}
                             label="Личный кабинет"
-                            // onClick={() => setContextModal({ isOpen: true })}
-                            onClick={() => modal_show()}
+                            onClick={() => setContextModal({ isOpen: true })}
                         />
                     </div>
                 </div>
