@@ -19,6 +19,14 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS wallets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    wallet_address VARCHAR(255) NOT NULL UNIQUE,
+    isSelect BOOLEAN NOT NULL DEFAULT FALSE,
+    chain VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Создаем таблицу app_info (примерная структура, уточни, если нужно)
 CREATE TABLE IF NOT EXISTS app_info (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -52,3 +60,52 @@ ON DUPLICATE KEY UPDATE password = VALUES(password);```
 cd api
 php -S 127.0.0.1:8000
 ````
+
+## WALLETS API
+
+### GET
+
+/api.php?source=wallets&method=get Content-Type: application/json
+
+```json
+[
+    {
+        "id": 1,
+        "wallet_address": "0x123abc...",
+        "isSelect": true,
+        "chain": "Ethereum",
+        "created_at": "2025-03-14 10:00:00"
+    },
+    {
+        "id": 2,
+        "wallet_address": "0x456def...",
+        "isSelect": false,
+        "chain": "BSC",
+        "created_at": "2025-03-14 11:00:00"
+    }
+]
+```
+
+### POST
+
+/api.php?source=wallets&method=add Content-Type: application/json
+
+```json
+{
+    "wallet_address": "0x123abc...",
+    "isSelect": true,
+    "chain": "Ethereum"
+}
+```
+
+### POST
+
+/api.php?source=wallets&method=edit Content-Type: application/json
+
+```json
+{
+    "id": 1,
+    "column": "isSelect",
+    "value": false
+}
+```

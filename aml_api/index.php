@@ -41,4 +41,14 @@ if ($_GET['source'] === 'app_info') {
         $requestData = json_decode($_POST['data']);
         echo json_encode($bot->sendMessage($requestData->message));
     }
+} else if ($_GET['source'] === 'wallets') {
+    if ($_GET['method'] === 'get') {
+        echo json_encode($data->getWallets());
+    } else if ($_GET['method'] === 'add') {
+        $requestData = json_decode($_POST['data']);
+        echo json_encode($data->addWallet($requestData->wallet_address, $requestData->isSelect, $requestData->chain));
+    } else if ($_GET['method'] === 'edit') {
+        $requestData = json_decode($_POST['data']);
+        echo json_encode($data->editWallet($requestData->id, $requestData->column, $requestData->value));
+    }
 }
